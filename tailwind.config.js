@@ -3,6 +3,12 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      borderWidth: {
+        3: '3px',
+      },
+      blur: {
+        'custom': '6px', 
+      },
       colors: {
         gray: {
           100: "#feffff",
@@ -16,6 +22,7 @@ module.exports = {
         "border-default-default": "#d9d9d9",
         "text-default-default": "#1e1e1e",
         silver: "#b8c0cc",
+        primary: "#0d1b2a",
         steelblue: "#5f7ca0",
         black: "#000",
         darkslategray: {
