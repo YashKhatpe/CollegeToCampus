@@ -9,10 +9,10 @@ body {
   @apply leading-[normal] m-0;
 }
 *,
-::before,
+/* ::before,
 ::after {
   border-width: 0;
-}
+} */
 
 li {
   list-style: none;
@@ -22,4 +22,9 @@ li {
 li a {
   font-weight: bold;
   font-size: x-large;
+}
+
+h1 {
+  font-family: Popins;
+  font-size: 48px;
 }

@@ -1,9 +1,13 @@
 import FrameComponent16 from "../components/FrameComponent16";
 import FrameComponent17 from "../components/FrameComponent17";
 import Footer5 from "../components/Footer5";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Resources = () => {
   return (
+    <>
+    <Navbar/>
     <div className="w-full relative bg-gainsboro overflow-hidden flex flex-col items-start justify-start gap-[104px] leading-[normal] tracking-[normal] gap-[52px] gap-[26px]">
       <FrameComponent16 />
       <section className="self-stretch flex flex-row items-start justify-center pt-0 px-5 pb-10 box-border max-w-full text-center text-31xl text-gray-300 font-lato">
@@ -20,8 +24,9 @@ const Resources = () => {
         </div>
       </section>
       <FrameComponent17 />
-      <Footer5 propAlignSelf="stretch" propHeight="49px" />
+      <Footer/>
     </div>
+    </>
   );
 };
 

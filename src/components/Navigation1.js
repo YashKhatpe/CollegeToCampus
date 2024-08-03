@@ -47,16 +47,21 @@ const Navigation1 = ({
         className="w-[680px] flex flex-col items-start justify-start pt-[4.1px] px-0 pb-0 box-border max-w-full mq450:w-0 mq1125:hidden"
         style={pageLinksStyle}
       >
-        <b className="self-stretch relative shrink-0 z-[1] mq450:hidden">
-          <span className="whitespace-pre-wrap">{homeJobListings}</span>
-          <span className="[text-decoration:underline] text-skyblue">
+        <b className="self-stretch relative shrink-0 z-[1] mq450:hidden bottom-3">
+          {/* <span className="whitespace-pre-wrap">{homeJobListings}</span> */}
+          <ul className="flex space-x-5">
+          <li className="[text-decoration:underline] text-skyblue ">Home</li>
+          <li className="">Job Listings</li>
+          <li className=" ">
             {training}
-          </span>
-          <span className="whitespace-pre-wrap">{resourcesInteraction}</span>
+          </li>
+          <li className="">Resources</li>
+          <li className="">Interaction</li>
+          </ul>
         </b>
       </div>
       <div
-        className="flex flex-col items-start justify-start pt-[4.1px] px-0 pb-0"
+        className="flex flex-col items-start justify-start pt-[4.1px] px-0 pb-0 left-10"
         style={buttonWrapperStyle}
       >
         <button className="cursor-pointer border-border-brand-default border-[1px] border-solid py-2.5 px-[34px] bg-lightslategray rounded-radius-200 overflow-hidden flex flex-row items-start justify-start gap-space-200 z-[1]">

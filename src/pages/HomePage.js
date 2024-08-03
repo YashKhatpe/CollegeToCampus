@@ -3,24 +3,22 @@ import Button1 from "../components/Button1";
 import FrameComponent11 from "../components/FrameComponent11";
 import FrameComponent12 from "../components/FrameComponent12";
 import Search from "../components/Search";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
-    <div className="w-full h-[4405px] relative bg-gray-300 overflow-hidden flex flex-col items-start justify-start pt-6 pb-[171px] pl-[60px] pr-7 box-border gap-[18px] leading-[normal] tracking-[normal] text-left text-31xl text-background-default-default font-lato mq750:pl-[30px] mq750:box-border mq1050:h-auto">
-      <section className="mt-[-608px] self-stretch flex flex-row items-start justify-start pt-0 pb-[276px] pl-[965px] pr-0 box-border max-w-full lg:pl-[482px] lg:box-border mq750:pl-[241px] mq750:pb-[179px] mq750:box-border mq450:pl-5 mq450:box-border">
-        <img
-          className="w-[575px] relative rounded-lg max-h-full object-cover max-w-[149%] shrink-0"
-          alt=""
-          src="/trainingpage3@2x.png"
-        />
-      </section>
+    <>
+    
+    <Navbar/>
+    <div className="w-full relative bg-gray-300 overflow-hidden flex flex-col items-start justify-start pl-[60px] pr-7 box-border gap-[18px] leading-[normal] tracking-[normal] text-left text-31xl text-background-default-default font-poppins mq750:pl-[30px] mq750:box-border mq1050:h-auto">
+     
       <img
-        className="w-full h-[729.5px] absolute !m-[0] top-[102px] right-[0px] left-[0px] max-w-full overflow-hidden shrink-0 object-cover"
+        className="w-full h-[729.5px] absolute !m-[0] right-[0px] left-[0px] max-w-full overflow-hidden shrink-0 object-cover"
         alt=""
         src="/convocationhomepage-2@2x.png"
       />
-      <Header3 />
-      <div className="w-[954px] flex flex-row items-start justify-center pt-0 px-0 pb-[43px] box-border max-w-full shrink-0">
+      <div className="w-[954px] flex flex-row items-start justify-center pt-64 px-0 pb-[43px] box-border max-w-full shrink-0">
         <h1 className="m-0 w-[666px] relative text-inherit tracking-[-0.25px] leading-[64px] font-extrabold font-inherit flex items-center shrink-0 [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)] max-w-full z-[1] mq1050:text-21xl mq1050:leading-[51px] mq450:text-11xl mq450:leading-[38px]">
           Empower Your Future
         </h1>
@@ -267,7 +265,7 @@ const HomePage = () => {
         </div>
       </section>
       <FrameComponent12 />
-      <footer className="self-stretch flex flex-row items-start justify-start py-0 pl-3.5 pr-0 box-border max-w-full shrink-0 text-left text-45xl text-silver font-lato">
+      {/* <footer className="self-stretch flex flex-row items-start justify-start py-0 pl-3.5 pr-0 box-border max-w-full shrink-0 text-left text-45xl text-silver font-lato">
         <div className="flex-1 flex flex-row items-end justify-center [row-gap:20px] max-w-full lg:flex-wrap">
           <div className="flex-1 flex flex-row items-start justify-start min-w-[617px] [row-gap:20px] max-w-full mq750:min-w-full mq1050:flex-wrap">
             <div className="flex-1 flex flex-col items-start justify-start gap-[46px] min-w-[358px] max-w-full gap-[23px] mq750:min-w-full">
@@ -377,8 +375,10 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
+      <Footer/>
     </div>
+    </>
   );
 };
 

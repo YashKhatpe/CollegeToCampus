@@ -16,6 +16,8 @@ module.exports = {
         "border-default-default": "#d9d9d9",
         "text-default-default": "#1e1e1e",
         silver: "#b8c0cc",
+        primary: "#0d1b2a",
+        btnColor: "#778da9",
         steelblue: "#5f7ca0",
         black: "#000",
         darkslategray: {
@@ -56,6 +58,9 @@ module.exports = {
         "corner-small": "8px",
         "radius-full": "9999px",
       },
+    },
+    borderWidth: {
+      3: "3px",
     },
     fontSize: {
       base: "16px",

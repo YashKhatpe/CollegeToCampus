@@ -6,15 +6,7 @@ const FrameComponent16 = ({ className = "" }) => {
     <section
       className={`self-stretch flex flex-col items-start justify-start gap-[50px] max-w-full text-left text-31xl text-gray-300 font-lato gap-[25px] ${className}`}
     >
-      <Navigation1
-        logo2="/logo-22@2x.png"
-        homeJobListings="Home      Job Listing      Training      "
-        training="Resources"
-        resourcesInteraction="      Interaction"
-        navigationPadding="30.8px 54px 16.8px 60px"
-        pageLinksPadding="4.2px 0px 0px"
-        buttonWrapperPadding="3.2px 0px 0px"
-      />
+     
       <div className="w-[1427px] flex flex-row items-start justify-center py-0 px-5 box-border max-w-full">
         <div className="w-[971px] flex flex-col items-start justify-start gap-[92px] max-w-full gap-[23px] gap-[46px]">
           <div className="w-[919px] flex flex-row items-start justify-start py-0 px-16 box-border max-w-full mq1050:pl-8 mq1050:pr-8 mq1050:box-border">

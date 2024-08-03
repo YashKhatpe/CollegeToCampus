@@ -1,10 +1,10 @@
 import Checkboxes from "./Checkboxes";
 import PropTypes from "prop-types";
 
-const FrameComponent13 = ({ className = "" }) => {
+const FrameComponent13 = ({ }) => {
   return (
     <div
-      className={`w-[232px] bg-border-default-default flex flex-col items-start justify-start pt-2.5 px-3.5 pb-[21px] box-border gap-1.5 min-w-[232px] text-left text-3xs text-black font-single-line-body-base mq1100:flex-1 ${className}`}
+      className={`w-[232px] bg-border-default-default 2-[350px] h-[700px] flex flex-col items-start justify-start pt-2.5 px-3.5 pb-[21px] box-border gap-1.5 relative right-60 text-left text-3xs text-black font-single-line-body-base mq1100:flex-1`}
     >
       <div className="w-[232px] h-[413px] relative bg-border-default-default hidden" />
       <div className="w-[47px] flex flex-row items-start justify-start pt-0 px-0 pb-1 box-border text-xs">
