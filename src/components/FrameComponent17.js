@@ -22,7 +22,7 @@ const FrameComponent17 = ({ className = "" }) => {
             />
           </div>
           <div className="self-stretch flex flex-row items-start justify-between max-w-full gap-5 mq1050:flex-wrap">
-            <div className="w-[412px] relative inline-block shrink-0 max-w-full">
+            <div className="w-[412px] font-poppins relative inline-block shrink-0 max-w-full">
               <p className="m-0">
                 <b>Training Programs</b>
               </p>
@@ -39,15 +39,9 @@ const FrameComponent17 = ({ className = "" }) => {
                 </span>
               </p>
             </div>
-            <div className="w-[324px] flex flex-row items-end justify-start gap-[147px] max-w-full gap-[73px]">
-              <img
-                className="h-[18px] w-5 relative"
-                loading="lazy"
-                alt=""
-                src="/play-arrow.svg"
-              />
+            <div className="w-[324px] flex flex-col items-end justify-start gap-5 max-w-full">
               <div className="flex flex-col items-start justify-end pt-0 px-0 pb-[5px]">
-                <button className="cursor-pointer border-border-brand-default border-[1px] border-solid py-[9px] pl-[33px] pr-8 bg-gray-300 rounded-radius-full overflow-hidden flex flex-row items-start justify-start gap-space-200">
+                <button className="cursor-pointer border-border-brand-default border-[1px] border-solid py-[9px] px-[33px] bg-gray-300 rounded-radius-full overflow-hidden flex flex-row items-start justify-start gap-space-200">
                   <img
                     className="h-4 w-4 relative overflow-hidden shrink-0 hidden"
                     alt=""
@@ -89,21 +83,23 @@ const FrameComponent17 = ({ className = "" }) => {
                     Placement Resources
                   </h3>
                 </div>
-                <button className="cursor-pointer border-border-brand-default border-[1px] border-solid py-[9px] px-[33px] bg-gray-300 rounded-radius-full overflow-hidden flex flex-row items-start justify-start gap-space-200">
-                  <img
-                    className="h-4 w-4 relative overflow-hidden shrink-0 hidden"
-                    alt=""
-                    src="/star4.svg"
-                  />
-                  <div className="relative text-5xl leading-[34px] font-extrabold font-single-line-body-base text-text-brand-on-brand text-left inline-block min-w-[89px] mq450:text-lgi mq450:leading-[27px]">
-                    Access
-                  </div>
-                  <img
-                    className="h-4 w-4 relative overflow-hidden shrink-0 hidden"
-                    alt=""
-                    src="/x6.svg"
-                  />
-                </button>
+                <div className="w-[324px] flex flex-col items-end justify-start gap-5 max-w-full">
+                  <button className="cursor-pointer border-border-brand-default border-[1px] border-solid py-[9px] px-[33px] bg-gray-300 rounded-radius-full overflow-hidden flex flex-row items-start justify-start gap-space-200">
+                    <img
+                      className="h-4 w-4 relative overflow-hidden shrink-0 hidden"
+                      alt=""
+                      src="/star4.svg"
+                    />
+                    <div className="relative text-5xl leading-[34px] font-extrabold font-single-line-body-base text-text-brand-on-brand text-left inline-block min-w-[89px] mq450:text-lgi mq450:leading-[27px]">
+                      Access
+                    </div>
+                    <img
+                      className="h-4 w-4 relative overflow-hidden shrink-0 hidden"
+                      alt=""
+                      src="/x6.svg"
+                    />
+                  </button>
+                </div>
               </div>
               <div className="w-[451px] relative text-xl font-semibold inline-block max-w-full mt-[-3px] mq450:text-base">
                 Guides and tools to enhance job application success

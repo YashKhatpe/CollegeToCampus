@@ -35,7 +35,7 @@ const FrameComponent16 = ({ className = "" }) => {
                   Bringing Students and Employers: Your Pathway to Success
                 </b>
               </div>
-              <div className="w-[456px] relative font-lato text-justify inline-block max-w-full mq450:text-base">
+              <div className="w-[456px] relative font-poppins text-justify inline-block max-w-full mq450:text-base">
                 <p className="m-0">
                   Discover how our dynamic training and placement portal
                   connects students with recruiters, offering essential
@@ -60,7 +60,7 @@ const FrameComponent16 = ({ className = "" }) => {
                 />
                 <b className="self-stretch relative mq450:text-base">{`Empowering Students and Recruiters: Your Dynamic Job Portal Awaits! `}</b>
               </div>
-              <div className="self-stretch relative font-lato text-justify mq450:text-base">
+              <div className="self-stretch relative font-poppins text-justify mq450:text-base">
                 <p className="m-0">
                   Explore our innovative training and placement portal designed
                   to connect students with employers. Featuring user-friendly
