@@ -7,6 +7,12 @@ module.exports = {
   plugins: [flowbite.plugin()],
   theme: {
     extend: {
+      borderWidth: {
+        3: '3px',
+      },
+      blur: {
+        'custom': '6px', 
+      },
       colors: {
         gray: {
           100: "#feffff",
@@ -21,7 +27,6 @@ module.exports = {
         "text-default-default": "#1e1e1e",
         silver: "#b8c0cc",
         primary: "#0d1b2a",
-        btnColor: "#778da9",
         steelblue: "#5f7ca0",
         black: "#000",
         darkslategray: {
