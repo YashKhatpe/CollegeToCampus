@@ -5,6 +5,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./custom.css";
+@import "flowbite";
 body {
   @apply leading-[normal] m-0;
 }
@@ -25,6 +27,6 @@ li a {
 }
 
 h1 {
-  font-family: Popins;
+  font-family: Poppins;
   font-size: 48px;
 }

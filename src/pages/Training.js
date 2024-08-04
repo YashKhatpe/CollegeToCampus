@@ -2,13 +2,14 @@ import Navigation1 from "../components/Navigation1";
 import FrameComponent15 from "../components/FrameComponent15";
 import StudentGrid from "../components/StudentGrid";
 import Footer5 from "../components/Footer5";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Navbar1 from "../components/Navbar1";
 
 const Training = () => {
   return (
     <>
-    <Navbar/>
+    <Navbar1/>
     <div className="w-full relative bg-gainsboro overflow-hidden flex flex-col items-end justify-start gap-[119px] leading-[normal] tracking-[normal] gap-[59px] gap-[30px]">
       
       <section className="w-[1382px] flex flex-row items-start justify-center pt-0 px-5 pb-[193px] box-border relative max-w-full text-left text-31xl text-gray-300 font-lato mq450:pb-[125px] mq450:box-border">

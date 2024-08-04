@@ -5,17 +5,17 @@ import FrameComponent21 from "../components/FrameComponent21";
 import FrameComponent19 from "../components/FrameComponent19";
 import FrameComponent18 from "../components/FrameComponent18";
 import Search from "../components/Search";
-import Navbar from "../components/Navbar";
+import Navbar1 from "../components/Navbar1";
 
 const Interaction = () => {
   return (
     <>
     
-      <Navbar/>
+      <Navbar1/>
     <div className="w-full h-[4191px] relative bg-gray-300 overflow-hidden flex flex-col items-start justify-start gap-8 leading-[normal] tracking-[normal] text-left text-31xl text-silver font-lato mq1300:h-auto">
   
       <img
-        className="w-full h-[727px] absolute !m-[0] top-[102px] right-[0px] left-[0px] max-w-full overflow-hidden shrink-0 object-cover"
+        className="w-full h-[727px] relative !m-[0] top-[102px] right-[0px] left-[0px] max-w-full overflow-hidden shrink-0 object-cover"
         alt=""
         src="/interaction5-2@2x.png"
       />
@@ -77,23 +77,23 @@ const Interaction = () => {
         <div className="w-[722px] flex flex-row items-end justify-between gap-5 max-w-full">
           <div className="h-[17px] w-[18px] relative">
             <img
-              className="absolute top-[0px] left-[0px] w-full h-full"
+              className="relative top-[0px] left-[0px] w-full h-full"
               alt=""
               src="/star-filled1.svg"
             />
             <img
-              className="absolute top-[0px] left-[0px] w-full h-full z-[1]"
+              className="relative top-[0px] left-[0px] w-full h-full z-[1]"
               alt=""
               src="/star-filled1.svg"
             />
           </div>
           <div className="w-[616px] flex flex-col items-start justify-end pt-0 px-0 pb-2 box-border max-w-[calc(100%_-_38px)]">
             <div className="self-stretch h-[91px] relative">
-              <h1 className="m-0 absolute top-[0px] left-[0px] text-inherit tracking-[-0.25px] leading-[64px] font-extrabold font-inherit flex items-center justify-center w-[616px] h-16 [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)] mq800:text-21xl mq800:leading-[51px] mq450:text-11xl mq450:leading-[38px]">
+              <h1 className="m-0 relative top-[0px] left-[0px] text-inherit tracking-[-0.25px] leading-[64px] font-extrabold font-inherit flex items-center justify-center w-[616px] h-16 [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)] mq800:text-21xl mq800:leading-[51px] mq450:text-11xl mq450:leading-[38px]">
                 User Feedback
               </h1>
               <img
-                className="absolute top-[67px] left-[518px] w-6 h-6"
+                className="relative top-[67px] left-[518px] w-6 h-6"
                 loading="lazy"
                 alt=""
                 src="/play-arrow1.svg"

@@ -22,7 +22,7 @@ import ResumeScanner from "./pages/ResumeScanner1";
 import VirtualMeet from "./pages/VirtualMeet";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
-import Navbar from "./components/Navbar";
+import Navbar1 from "./components/Navbar1";
 
 function App() {
   const action = useNavigationType();
@@ -143,7 +143,7 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/signin" element={<Signin />} />
       <Route path="/resumescanner" element={<ResumeScanner />} />
-      <Route path="/nav" element={<Navbar />} />
+      <Route path="/nav" element={<Navbar1 />} />
     </Routes>
   );
 }

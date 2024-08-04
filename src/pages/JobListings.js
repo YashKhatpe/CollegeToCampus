@@ -2,12 +2,14 @@ import FrameComponent3 from "../components/FrameComponent3";
 import FrameComponent13 from "../components/FrameComponent13";
 import FrameComponent14 from "../components/FrameComponent14";
 import Search from "../components/Search";
-import Navbar from "../components/Navbar";
+import Navbar1 from "../components/Navbar1";
 import axios from 'axios';
 import { useEffect, useState } from "react";
 
 
  
+// import Navbar from "../components/Navbar";
+
 
 const JobListings = () => {
 

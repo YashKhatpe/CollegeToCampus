@@ -7,7 +7,7 @@ const FrameComponent12 = ({ className = "" }) => {
     >
       <div className="w-[892px] flex flex-row items-start justify-center [row-gap:20px] max-w-full mq1050:flex-wrap">
         <img
-          className="w-[443px] relative rounded-lg max-h-full object-cover min-h-[375px] max-w-full z-[3] mq1050:flex-1"
+          className="w-[443px] relative rounded-lg max-h-full object-cover min-h-[398px] max-w-full z-[3] mq1050:flex-1"
           loading="lazy"
           alt=""
           src="/image-21@2x.png"

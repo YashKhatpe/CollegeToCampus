@@ -1,8 +1,18 @@
 /** @type {import('tailwindcss').Config} */
+const flowbite = require("flowbite-react/tailwind");
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}",
+    flowbite.content(),
+  ],
+  plugins: [flowbite.plugin()],
   theme: {
     extend: {
+      borderWidth: {
+        3: '3px',
+      },
+      blur: {
+        'custom': '6px', 
+      },
       colors: {
         gray: {
           100: "#feffff",
@@ -17,7 +27,6 @@ module.exports = {
         "text-default-default": "#1e1e1e",
         silver: "#b8c0cc",
         primary: "#0d1b2a",
-        btnColor: "#778da9",
         steelblue: "#5f7ca0",
         black: "#000",
         darkslategray: {
@@ -61,6 +70,10 @@ module.exports = {
     },
     borderWidth: {
       3: "3px",
+      0: "0px"
+    },
+    blur: {
+      'custom': '6px', 
     },
     fontSize: {
       base: "16px",
@@ -116,6 +129,15 @@ module.exports = {
       lg: {
         max: "1200px",
       },
+      md1: {
+        max: "1024px",
+      },
+      // md: {
+      //   max: "910px"
+      // },
+      md: {
+        max: "768px",
+      },
       mq1150: {
         raw: "screen and (max-width: 1150px)",
       },
@@ -139,6 +161,12 @@ module.exports = {
       },
       mq450: {
         raw: "screen and (max-width: 450px)",
+      },
+      mq910: {
+        max: '910px'
+      },
+      mq350: {
+        max: '319px'
       },
     },
   },
