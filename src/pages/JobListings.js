@@ -2,12 +2,13 @@ import FrameComponent3 from "../components/FrameComponent3";
 import FrameComponent13 from "../components/FrameComponent13";
 import FrameComponent14 from "../components/FrameComponent14";
 import Search from "../components/Search";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
+import Navbar1 from "../components/Navbar1";
 
 const JobListings = () => {
   return (
     <>
-      <Navbar />
+      <Navbar1 />
       <div className="w-full h-[1694px] relative bg-gray-300 overflow-hidden flex flex-col items-end justify-start pt-0 px-0 pb-[122px] box-border gap-[86px] leading-[normal] tracking-[normal] text-center text-6xl text-silver font-lato mq1275:h-auto">
         {/* <FrameComponent3
         frameHeaderTop="unset"

@@ -5,6 +5,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./custom.css";
+@import "flowbite";
 body {
   @apply leading-[normal] m-0;
 }

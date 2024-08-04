@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
+const flowbite = require("flowbite-react/tailwind");
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}",
+    flowbite.content(),
+  ],
+  plugins: [flowbite.plugin()],
   theme: {
     extend: {
       colors: {
@@ -61,6 +65,10 @@ module.exports = {
     },
     borderWidth: {
       3: "3px",
+      0: "0px"
+    },
+    blur: {
+      'custom': '6px', 
     },
     fontSize: {
       base: "16px",
@@ -116,6 +124,15 @@ module.exports = {
       lg: {
         max: "1200px",
       },
+      md1: {
+        max: "1024px",
+      },
+      // md: {
+      //   max: "910px"
+      // },
+      md: {
+        max: "768px",
+      },
       mq1150: {
         raw: "screen and (max-width: 1150px)",
       },
@@ -139,6 +156,12 @@ module.exports = {
       },
       mq450: {
         raw: "screen and (max-width: 450px)",
+      },
+      mq910: {
+        max: '910px'
+      },
+      mq350: {
+        max: '319px'
       },
     },
   },
