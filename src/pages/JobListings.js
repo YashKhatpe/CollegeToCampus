@@ -3,11 +3,36 @@ import FrameComponent13 from "../components/FrameComponent13";
 import FrameComponent14 from "../components/FrameComponent14";
 import Search from "../components/Search";
 import Navbar from "../components/Navbar";
+import axios from 'axios';
+import { useEffect, useState } from "react";
+
+
+ 
 
 const JobListings = () => {
+
+  const [data, setData] = useState([]);
+
+
+
+  useEffect(() => {
+    const refreshList = () => {
+      console.log('data init');
+    axios
+      .get("http://localhost:8000/job_listing")
+      .then(res =>{ setData( res.data );
+                    console.log(res.data)})
+      .catch(err => console.log(err));
+    };
+
+    refreshList();
+  }, []);
+
+  
+
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="w-full h-[1694px] relative bg-gray-300 overflow-hidden flex flex-col items-end justify-start pt-0 px-0 pb-[122px] box-border gap-[86px] leading-[normal] tracking-[normal] text-center text-6xl text-silver font-lato mq1275:h-auto">
         {/* <FrameComponent3
         frameHeaderTop="unset"
@@ -33,6 +58,13 @@ const JobListings = () => {
           <div className="w-[967px] flex flex-row items-start max-w-full mq1100:flex-wrap ">
             <FrameComponent13 />
             <FrameComponent14 />
+
+            <ul>
+              {data.map((job, index) => (
+                <li key={index}>{job.title}</li>
+              ))}
+            </ul>
+
           </div>
         </section>
         <section className="w-[1402px] flex flex-row items-start justify-end py-0 px-8 box-border max-w-full shrink-0 text-left text-45xl text-silver font-lato">
