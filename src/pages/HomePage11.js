@@ -29,7 +29,7 @@ const HomePage11 = () => {
           Empower Your Future
         </h1>
       </div>
-      <div className="w-[759px] flex flex-row items-start justify-center py-0 px-5 box-border max-w-full shrink-0 text-base font-single-line-body-base">
+      <div className="w-[759px] flex flex-row items-start justify-center py-0 px-5 box-border  shrink-0 text-base font-single-line-body-base">
         <b className="w-[571px] relative inline-block shrink-0 max-w-full z-[1]">
           Connecting students with Opportunities through Dynamic Training and
           Placement Solutions

@@ -25,7 +25,7 @@ const Footer = ({
 
   return (
     <footer
-      className={`self-stretch bg-gray-300 flex flex-row items-end justify-center pt-[123px] px-[51px] pb-[139px] box-border [row-gap:20px] max-w-full text-left text-45xl text-silver font-lato mq750:pt-20 mq750:px-[25px] mq750:pb-[90px] mq750:box-border mq1125:flex-wrap ${className}`}
+      className={`self-stretch pb-10 bg-gray-300 flex flex-row items-end justify-center  px-[51px] box-border [row-gap:20px] max-w-full text-left text-29xl text-silver font-lato  mq750:px-[25px] mq750:box-border mq1125:flex-wrap ${className}`}
     >
       <div className="h-[575px] w-[1440px] relative bg-gray-300 hidden max-w-full z-[1]" />
       <div
@@ -37,7 +37,7 @@ const Footer = ({
             <h1 className="m-0 self-stretch h-[107px] relative text-inherit tracking-[-0.25px] leading-[64px] font-extrabold font-inherit flex items-center shrink-0 [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)] z-[1] mq450:text-19xl mq450:leading-[38px] mq1050:text-32xl mq1050:leading-[51px]">
               Connect
             </h1>
-            <h3 className="m-0 w-[399px] relative text-10xl font-normal font-inherit inline-block max-w-full z-[1] mq450:text-4xl">
+            <h3 className="m-0 w-[399px] relative text-xl font-normal font-inherit inline-block max-w-full z-[1] mq450:text-4xl">
               Bridging students with recruiters for opportunities
             </h3>
           </div>
@@ -79,19 +79,19 @@ const Footer = ({
                 alt=""
                 src="/copyright-circle.svg"
               />
-              <b className="flex-1 relative inline-block max-w-[calc(100%_-_33px)] z-[1] mq450:text-base">
+              <b className="flex-1 text-xl relative inline-block max-w-[calc(100%_-_33px)] z-[1] mq450:text-base">
                 2024. All rights reserved.
               </b>
             </div>
           </div>
         </div>
-        <div className="w-[399px] flex flex-col items-start justify-start pt-[55px] px-0 pb-0 box-border min-w-[399px] max-w-full text-10xl mq750:min-w-full mq1050:flex-1">
+        <div className="w-[399px] flex flex-col items-start justify-start pt-[32px] px-0 pb-0 box-border min-w-[399px] max-w-full text-10xl mq750:min-w-full mq1050:flex-1">
           <div className="self-stretch relative z-[1] mq450:text-4xl">
             <p className="m-0 font-extrabold">RESOURCES</p>
             <p className="m-0">&nbsp;</p>
-            <p className="m-0">+1234567890</p>
+            <p className="m-0 text-xl">+1234567890</p>
             <p className="m-0">&nbsp;</p>
-            <p className="m-0">contactcc@gmail.com</p>
+            <p className="m-0 text-xl">contactcc@gmail.com</p>
           </div>
         </div>
       </div>
@@ -121,7 +121,7 @@ const Footer = ({
               propMarginTop="unset"
             />
             <button
-              className="cursor-pointer border-lightslategray border-[1px] border-solid py-3 px-[79px] bg-lightslategray rounded-radius-200 overflow-hidden flex flex-row items-start justify-start gap-space-200 z-[1] mq450:pl-5 mq450:pr-5 mq450:box-border"
+              className="cursor-pointer border-lightslategray border-solid py-3 px-[79px]  rounded-radius-200 overflow-hidden flex flex-row items-start justify-start gap-space-200 z-[1] mq450:pl-5 mq450:pr-5 mq450:box-border border-3 bg-primary hover:bg-btnColor hover:text-primary transition duration-500 ease-in-out"
               style={button1Style}
             >
               <img
@@ -129,7 +129,7 @@ const Footer = ({
                 alt=""
                 src="/star.svg"
               />
-              <div className="relative text-base leading-[140%] font-extrabold font-single-line-body-base text-text-brand-on-brand text-left">
+              <div className="relative text-base leading-[140%] font-extrabold font-single-line-body-base text-text-brand-on-brand text-left w-44">
                 Join our platform now
               </div>
               <img

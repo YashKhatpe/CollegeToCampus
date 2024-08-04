@@ -1,78 +1,83 @@
+import Header3 from "../components/Header3";
 import Button1 from "../components/Button1";
+import FrameComponent11 from "../components/FrameComponent11";
+import FrameComponent12 from "../components/FrameComponent12";
+import Search from "../components/Search";
+
 const HomePage = () => {
   return (
-    <div className="overflow-x-hidden w-full min-h-screen relative bg-gray-300 flex flex-col items-center justify-start  px-[90px] box-border gap-[18px] leading-normal tracking-normal text-center text-31xl text-background-default-default font-poppins">
+    <div className="w-full min-h-screen relative bg-gray-300 flex flex-col items-center justify-start  px-4 sm:px-6 md:px-8 lg:px-[90px] box-border gap-[18px] leading-normal tracking-normal text-center text-31xl text-background-default-default font-poppins overflow-x-hidden">
       <img
-        className="w-[100%] h-[700px] filter blur-custom absolute top-0 left-0 right-0 object-cover"
+        className="w-full h-[720px] filter blur-custom absolute top-0 left-0 right-0 object-cover"
         alt=""
         src="/convo1.jpeg"
       />  
 
-      <div className="mt-[190px] relative overflow-hidden w-full max-w-[1000px] text-left">
+      <div className="mt-[135px] relative overflow-hidden w-full max-w-[1000px] text-left px-4 sm:px-6">
         <h1 className="w-full text-21xl tracking-[-0.25px] leading-[64px] font-extrabold text-shadow max-w-full">
           Empower Your Future
         </h1>
       </div>
 
-      <div className=" relative w-full max-w-[1000px] text-3xl text-left">
+      <div className="relative w-full max-w-[1000px] text-3xl text-left px-4 sm:px-6">
         <b>
           Connecting students with Opportunities through Dynamic Training and Placement Solutions
         </b>
       </div>
       
-       <div className="w-full max-w-[1000px] flex flex-col items-start mt-4">
-       <Button1 labelText="Join" />
-     </div>
+      <div className="w-full max-w-[1000px] flex flex-col items-start md:items-start mt-4 px-4 sm:px-6">
+        <Button1 labelText="Join" />
+      </div>
 
-      <section className="w-full max-w-fit flex flex-col items-center justify-center text-silver
-       px-[180px] mt-[250px] text-21xl">
-        <div className="w-full max-w-[1029px] flex flex-wrap items-center justify-center gap-40">
-          <h1 className="flex-1 text-inherit tracking-[-0.25px]  font-bold text-shadow max-w-full text-center">
-            <p>Connecting Students with Opportunities</p>
+      <section className="w-full max-w-full flex flex-col items-center justify-center text-silver px-4 sm:px-6 md:px-[180px] mt-[270px] text-21xl">
+        <div className="w-full max-w-[1029px] flex flex-wrap items-center justify-center gap-10">
+          <h1 className="flex-1 text-inherit tracking-[-0.25px] leading-[64px] font-bold text-shadow max-w-full text-center">
+            <p>Connecting Students</p>
+            <p>with Opportunities</p>
           </h1>
-          <div className="w-full max-w-[380px] text-center">
-            <b >
-              <p className="whitespace-pre-wrap "><p>15 Success Stories 150+ Join Us </p>
-              </p>
+          <div className="flex-1 w-full max-w-[460px] text-center px-4 sm:px-6">
+            <b className="filter drop-shadow">
+              <p className="whitespace-pre-wrap">150+ Join Us</p>
+              <p className="whitespace-pre-wrap">15 Success Stories</p>
             </b>
           </div>
         </div>
       </section>
 
-      <div className="w-full text-xl text-silver text-center mb-[50px]">
+      <div className="w-full text-xl text-silver text-center mb-[50px] px-4 sm:px-6">
         <div className="max-w-[1068px] font-semibold mx-auto">
           We bridge students seeking employment with recruiters, offering comprehensive resources, training programs, and interactive features to enhance placements and career success.
         </div>
       </div>
 
-      <section className="w-full max-w-[1280px] flex flex-col items-center justify-center pb-[21px] mt-[50px]">
+      <section className="w-full max-w-full flex flex-col items-center justify-center pb-[21px] mt-[50px] px-4 sm:px-6">
         <img className="w-full max-w-[1010px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage2-2@2x.png" />
       </section>
       
-      <section className="w-full max-w-[1292px] flex flex-col items-center justify-center text-center text-21xl text-silver px-4 ">
+      <section className="w-full max-w-full flex flex-col items-center justify-center text-center text-21xl text-silver px-4 sm:px-6">
         <h1 className="w-full max-w-[554px] text-inherit tracking-[-0.25px] leading-[64px] font-extrabold text-shadow max-w-full">
           Job Connection
         </h1>
       </section>
       
-      <section className="w-full max-w-[1292px] flex flex-col items-center justify-center pb-8 text-center text-xl text-silver">
+      <section className="w-full max-w-full flex flex-col items-center justify-center pb-8 text-center text-xl text-silver px-4 sm:px-6">
         <b className="w-full max-w-[792px]">
           <p>A platform connecting students with recruiters for employment opportunities</p>
         </b>
       </section>
 
-      <section className="w-full max-w-[1292px] flex flex-col items-center justify-center pb-[23px] text-left text-10xl text-silver">
+      <section className="w-full max-w-full flex flex-col items-center justify-center pb-[23px] px-4 sm:px-6">
         <div className="w-full max-w-[978px] flex flex-wrap items-center justify-center gap-5">
           <div className="flex-1 min-w-[445px] max-w-full flex flex-col items-center justify-start gap-[21px]">
             <img className="w-full h-[253px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage9-2@2x.png" />
-            <div className="w-full flex flex-col items-center justify-start text-center">
-              <b>Placement Resources</b>
-              <p className="text-center text-xl">Guides and tools for resumes, interviews and job postings.</p>
+            <div className="w-full flex flex-col items-center justify-start text-center px-4 text-8xl">
+              <b>AI-Powered Resume Scanner</b>
+              <p className="text-center text-xl">Optimize Your Resume with Intelligent Insights for a Competitive Edge</p>
             </div>
           </div>
           <div className="flex-1 min-w-[444px] max-w-full flex flex-col items-center justify-start gap-[22px]">
             <img className="w-full h-[253px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage7-2@2x.png" />
-            <div className="w-full flex flex-col items-center justify-start text-center">
+            <div className="w-full flex flex-col text-8xl items-center justify-start text-center px-4 sm:px-6">
               <b>Interactive Features</b>
               <p className="text-center text-xl">Realtime sessions for practice and feedback for users.</p>
             </div>
@@ -80,18 +85,18 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="w-full max-w-[1290px] flex flex-col items-center justify-center pb-[68px] text-left text-10xl text-silver">
+      <section className="w-full max-w-full flex flex-col items-center justify-center pb-[68px] px-4 sm:px-6">
         <div className="w-full max-w-[980px] flex flex-wrap items-center justify-center gap-5">
           <div className="flex-1 min-w-[447px] max-w-full flex flex-col items-center justify-start gap-[39px]">
             <img className="w-full h-[254px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage8-2@2x.png" />
-            <div className="w-full flex flex-col items-center justify-start text-center">
-              <b>Training Programs</b>
-              <p className="text-center text-xl">Interactive courses with detailed content and schedules available.</p>
+            <div className="w-full flex flex-col text-8xl items-center justify-start text-center px-4 sm:px-6">
+              <b>Placement Resources</b>
+              <p className="text-center text-xl">Guides and tools for resumes, interviews, and job postings.</p>
             </div>
           </div>
           <div className="flex-1 min-w-[446px] max-w-full flex flex-col items-center justify-start gap-[38px]">
             <img className="w-full h-[254px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage6-2@2x.png" />
-            <div className="w-full flex flex-col items-center justify-start text-center">
+            <div className="w-full flex flex-col items-center justify-start text-8xl text-center px-4 sm:px-6">
               <b>Training Programs</b>
               <p className="text-center text-xl">Interactive courses with detailed content and schedules available.</p>
             </div>
@@ -99,10 +104,8 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* <FrameComponent12 /> */}
-
       <section
-      className={`w-[1322px] flex flex-row items-start justify-center pt-0 px-0 pb-[50px] box-border max-w-full shrink-0 text-center text-mini text-text-default-default font-poppins mq750:pb-[278px] mq750:box-border mq1050:pb-[428px] mq1050:box-border`}
+      className='w-[1322px] flex flex-row items-start justify-center pt-0 px-0 pb-[70px] box-border max-w-full shrink-0 text-center text-mini text-text-default-default font-lato mq750:pb-[278px] mq750:box-border mq1050:pb-[428px] mq1050:box-border'
     >
       <div className="w-[892px] flex flex-row items-start justify-center [row-gap:20px] max-w-full mq1050:flex-wrap">
         <img
@@ -112,7 +115,16 @@ const HomePage = () => {
           src="/image-21@2x.png"
         />
         <div className="flex-1 flex flex-row items-start justify-start relative min-w-[300px] max-w-full ml-[-12px] mq750:ml-0">
-          
+          <img
+            className="h-[13px] w-3.5 absolute !m-[0] top-[97px] left-[212px]"
+            alt=""
+            src="/icon2.svg"
+          />
+          <img
+            className="h-[13px] w-3.5 absolute !m-[0] top-[99px] right-[207px]"
+            alt=""
+            src="/icon2.svg"
+          />
           <div className="flex-1 rounded-tl-none rounded-tr-lg rounded-br-lg rounded-bl-none bg-steelblue flex flex-col items-end justify-start pt-[97px] px-[21px] pb-[68px] box-border gap-6 max-w-full z-[2] mq450:pt-8 mq450:pb-11 mq450:box-border">
             <div className="w-[461px] h-[375px] relative rounded-tl-none rounded-tr-lg rounded-br-lg rounded-bl-none bg-steelblue hidden max-w-full" />
             <div className="w-[408px] flex flex-row items-start justify-center max-w-full">
@@ -154,7 +166,7 @@ const HomePage = () => {
             </div>
             <div className="w-[409px] flex flex-row items-start justify-start pt-0 px-0 pb-[5px] box-border max-w-full">
               <div className="flex-1 relative font-medium inline-block max-w-full z-[3]">
-                <p className="m-0">{`This portal transformed my job search experience `}</p>
+                <p className="m-0">This portal transformed my job search experience </p>
                 <p className="m-0">
                   with it’s resources and user-friendly interface.
                 </p>
@@ -177,10 +189,9 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+        
       </div>
-    </section>
-
-   
+      </section>
     </div>
   );
 };

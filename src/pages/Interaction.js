@@ -5,23 +5,21 @@ import FrameComponent21 from "../components/FrameComponent21";
 import FrameComponent19 from "../components/FrameComponent19";
 import FrameComponent18 from "../components/FrameComponent18";
 import Search from "../components/Search";
+import Navbar from "../components/Navbar";
 
 const Interaction = () => {
   return (
-    <div className="w-full h-[4191px] relative bg-gray-300 overflow-hidden flex flex-col items-start justify-start gap-8 leading-[normal] tracking-[normal] text-left text-31xl text-silver font-lato gap-4 mq1300:h-auto">
-      <section className="mt-[-584px] self-stretch flex flex-row items-start justify-start pt-0 pb-[238px] pl-[1025px] pr-0 box-border max-w-full shrink-0 mq800:pl-64 mq800:pb-[155px] mq800:box-border mq450:pl-5 mq450:box-border mq1300:pl-[512px] mq1300:box-border">
-        <img
-          className="w-[575px] relative rounded-lg max-h-full object-cover max-w-[139%] shrink-0"
-          alt=""
-          src="/trainingpage3@2x.png"
-        />
-      </section>
+    <>
+    
+      <Navbar/>
+    <div className="w-full h-[4191px] relative bg-gray-300 overflow-hidden flex flex-col items-start justify-start gap-8 leading-[normal] tracking-[normal] text-left text-31xl text-silver font-lato mq1300:h-auto">
+  
       <img
         className="w-full h-[727px] absolute !m-[0] top-[102px] right-[0px] left-[0px] max-w-full overflow-hidden shrink-0 object-cover"
         alt=""
         src="/interaction5-2@2x.png"
       />
-      <Header1 headerMinHeight="432px" logo2="/logo-21@2x.png" />
+      {/* <Header1 headerMinHeight="432px" logo2="/logo-21@2x.png" /> */}
       <div className="w-[888px] flex flex-row items-start justify-center pt-0 px-5 pb-4 box-border max-w-full shrink-0">
         <h1 className="m-0 w-[616px] relative text-inherit tracking-[-0.25px] leading-[64px] font-extrabold font-inherit flex items-center shrink-0 [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)] max-w-full z-[1] mq800:text-21xl mq800:leading-[51px] mq450:text-11xl mq450:leading-[38px]">
           Career Connection Hub
@@ -222,6 +220,7 @@ const Interaction = () => {
         </div>
       </footer>
     </div>
+    </>
   );
 };
 

@@ -64,6 +64,9 @@ module.exports = {
         "radius-full": "9999px",
       },
     },
+    borderWidth: {
+      3: "3px",
+    },
     fontSize: {
       base: "16px",
       xl: "20px",
