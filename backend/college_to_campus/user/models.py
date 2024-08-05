@@ -10,13 +10,29 @@ def validate_mobile_number(value):
 class user(models.Model):
     GENDER = [
         ('male', 'male'),
-        ('female','female')
+        ('female','female'),
+        ('others','others')
     ]
-    name = models.CharField(max_length=100)
+    USER_TYPE = [
+        ('student', 'student'),
+        ('employee', 'employee')
+    ]
+    firstName = models.CharField(max_length=100)
+    lastName = models.CharField(max_length=100)
+    profilePicture = models.ImageField(blank=True, null=True)
+    
     email = models.EmailField(max_length=255)
-    phone = models.CharField(max_length=10, validators=[validate_mobile_number])
-    gender = models.CharField(max_length=10,choices= GENDER)
-    address = models.CharField(max_length=255)
-    college = models.CharField(max_length=255)
-    degree = models.CharField(max_length=255)
-    cgpa = models.FloatField()
+    contactNumber = models.CharField(max_length=10, validators=[validate_mobile_number])
+    gender = models.CharField(max_length=10,choices= GENDER,blank=True, null=True)
+    city = models.CharField(max_length=255)
+    
+    clgName = models.CharField(max_length=255,blank=True, null=True)
+    degree = models.CharField(max_length=255,blank=True, null=True)
+    
+    cmpName = models.CharField(max_length=255,blank=True, null=True)
+    cmpUrl = models.CharField(max_length=255,blank=True, null=True)
+    desg =  models.CharField(max_length=255,blank=True, null=True)
+    
+    user_type = models.CharField(choices=USER_TYPE,max_length=20)
+
+
