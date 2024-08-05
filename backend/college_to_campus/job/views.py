@@ -10,3 +10,19 @@ class add_job(generics.CreateAPIView):
 class list_job(generics.ListAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
+    
+class add_company(generics.CreateAPIView):
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
+
+class list_company(generics.ListAPIView):
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
+    
+class add_application(generics.CreateAPIView):
+    queryset = Application.objects.all()
+    serializer_class = ApplicationSerializer
+
+class list_application(generics.ListAPIView):
+    queryset = Application.objects.all()
+    serializer_class = ApplicationSerializer

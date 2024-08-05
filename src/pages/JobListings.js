@@ -1,6 +1,26 @@
 import Checkboxes from "../components/Checkboxes";
 
 const JobListings = () => {
+
+  const [data, setData] = useState([]);
+
+
+
+  useEffect(() => {
+    const refreshList = () => {
+      console.log('data init');
+    axios
+      .get("http://localhost:8000/job_listing")
+      .then(res =>{ setData( res.data );
+                    console.log(res.data)})
+      .catch(err => console.log(err));
+    };
+
+    refreshList();
+  }, []);
+
+  
+
   return (
     <>
     <div className="font-poppins min-h-screen bg-gray-300 overflow-x-hidden flex flex-col items-center py-4 px-2">
