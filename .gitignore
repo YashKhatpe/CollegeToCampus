@@ -33,3 +33,127 @@ pids
 # OS-specific
 Thumbs.db
   
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+db.sqlite3
+media/
+
+# If your Django project uses SQLite:
+*.sqlite3
+
+# Django migrations
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Node modules (if using Node for frontend assets)
+node_modules/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyCharm IDE files
+.idea/
+
+# VSCode IDE files
+.vscode/
+
+# JetBrains IDE files
+*.iml
+
+# Pipfile
+Pipfile.lock
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# pytest
+.pytest_cache/
+pytest_cache/
+
+# Sphinx documentation
+docs/_build/
+
+# Pyre type checker
+.pyre/
+
+# Pyright static type checker
+.pyright/
+
+# mypy static type checker
+.mypy_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Flask specific files
+instance/
+.webassets-cache
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+
+# dotenv
+.env.local
+.env.production
+.env.*.local
+
+# virtualenv
+.pyenv
+.python-version
+

@@ -6,7 +6,7 @@ import Search from "../components/Search";
 // import Navbar from "../components/Navbar1";
 import Footer from "../components/Footer";
 import Navbar1 from "../components/Navbar1";
-
+import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <>
@@ -31,8 +31,8 @@ const HomePage = () => {
         </b>
       </div>
       
-      <div className="w-full max-w-[1000px] flex flex-col items-start md:items-start mt-4 px-4 sm:px-6">
-        <Button1 labelText="Join" />
+      <div className="w-full max-w-[1000px] cursor-pointer flex flex-col items-start md:items-start mt-4 px-4 sm:px-6">
+        <Button1  labelText="Join" />
       </div>
 
       <section className="w-full max-w-full flex flex-col items-center justify-center text-silver px-4 sm:px-6 md:px-[180px] mt-[370px] text-21xl">
@@ -74,14 +74,14 @@ const HomePage = () => {
 
       <section className="w-full max-w-full flex flex-col items-center justify-center pb-[23px] px-4 sm:px-6">
         <div className="w-full max-w-[978px] flex flex-wrap items-center justify-center gap-5">
-          <div className="flex-1 min-w-[445px] max-w-full flex flex-col items-center justify-start gap-[21px]">
+          <Link to='/resumescanner' className="flex-1 cursor-pointer min-w-[445px] max-w-full flex flex-col items-center justify-start gap-[21px]">
             <img className="w-full h-[253px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage9-2@2x.png" />
             <div className="w-full flex flex-col items-center justify-start text-center px-4 text-8xl">
               <b>AI-Powered Resume Scanner</b>
               <p className="text-center text-xl">Optimize Your Resume with Intelligent Insights for a Competitive Edge</p>
             </div>
-          </div>
-          <div className="flex-1 min-w-[444px] max-w-full flex flex-col items-center justify-start gap-[22px]">
+          </Link>
+          <div className="flex-1 min-w-[444px] cursor-pointer max-w-full flex flex-col items-center justify-start gap-[22px]">
             <img className="w-full h-[253px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage7-2@2x.png" />
             <div className="w-full flex flex-col text-8xl items-center justify-start text-center px-4 sm:px-6">
               <b>Interactive Features</b>
@@ -93,14 +93,14 @@ const HomePage = () => {
 
       <section className="w-full max-w-full flex flex-col items-center justify-center pb-[68px] px-4 sm:px-6">
         <div className="w-full max-w-[980px] flex flex-wrap items-center justify-center gap-5">
-          <div className="flex-1 min-w-[447px] max-w-full flex flex-col items-center justify-start gap-[39px]">
+          <div className="flex-1 cursor-pointer min-w-[447px] max-w-full flex flex-col items-center justify-start gap-[39px]">
             <img className="w-full h-[254px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage8-2@2x.png" />
             <div className="w-full flex flex-col text-8xl items-center justify-start text-center px-4 sm:px-6">
               <b>Placement Resources</b>
               <p className="text-center text-xl">Guides and tools for resumes, interviews, and job postings.</p>
             </div>
           </div>
-          <div className="flex-1 min-w-[446px] max-w-full flex flex-col items-center justify-start gap-[38px]">
+          <div className="flex-1 cursor-pointer min-w-[446px] max-w-full flex flex-col items-center justify-start gap-[38px]">
             <img className="w-full h-[254px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage6-2@2x.png" />
             <div className="w-full flex flex-col items-center justify-start text-8xl text-center px-4 sm:px-6">
               <b>Training Programs</b>
@@ -199,6 +199,7 @@ const HomePage = () => {
       </div>
       </section>
     </div>
+    <Footer/>
 
     </>
   );

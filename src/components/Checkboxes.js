@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import PropTypes from "prop-types";
 
 const Checkboxes = ({
-  className = "",
+  className,
   checkboxesLeft,
   checkboxesPadding,
   checkboxesHeight,
@@ -30,15 +30,15 @@ const Checkboxes = ({
       style={checkboxesStyle}
     >
       <div
-        className="h-10 w-10 rounded-81xl flex flex-row items-center justify-center p-[11px] box-border relative"
+        className="h-9 w-10 rounded-81xl flex flex-row items-center justify-center p-[11px] box-border relative"
         style={stateLayerStyle}
       >
         <input
-          className="m-0 h-[18px] w-[18px] relative rounded-sm"
-          type="checkbox"
+          className="m-0 h-[18px] w-[18px] accent-primary relative rounded-sm"
+          type="checkbox" 
         />
         <input
-          className="!m-[0] h-6 w-6 absolute top-[calc(50%_-_12px)] left-[calc(50%_-_12px)] z-[1]"
+          className="m-0 h-[18px] w-[18px] accent-primary absolute top-[calc(50%_-_30px)]  z-[1]"
           type="checkbox"
         />
       </div>
@@ -57,4 +57,4 @@ Checkboxes.propTypes = {
   stateLayerMarginLeft: PropTypes.any,
 };
 
-export default Checkboxes;
+export default Checkboxes;
