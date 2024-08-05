@@ -9,13 +9,13 @@ def validate_mobile_number(value):
 
 class user(models.Model):
     GENDER = [
-        ('Male', 'Male'),
-        ('Female','Female'),
-        ('Others','Others')
+        ('male', 'male'),
+        ('female','female'),
+        ('others','others')
     ]
     USER_TYPE = [
-        ('Student', 'Student'),
-        ('Employee', 'Employee')
+        ('student', 'student'),
+        ('employee', 'employee')
     ]
     firstName = models.CharField(max_length=100)
     lastName = models.CharField(max_length=100)
@@ -23,7 +23,7 @@ class user(models.Model):
     
     email = models.EmailField(max_length=255)
     contactNumber = models.CharField(max_length=10, validators=[validate_mobile_number])
-    gender = models.CharField(max_length=10,choices= GENDER)
+    gender = models.CharField(max_length=10,choices= GENDER,blank=True, null=True)
     city = models.CharField(max_length=255)
     
     clgName = models.CharField(max_length=255,blank=True, null=True)
