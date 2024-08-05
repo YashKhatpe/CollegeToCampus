@@ -1,10 +1,7 @@
-import Navigation1 from "../components/Navigation1";
 import FrameComponent15 from "../components/FrameComponent15";
 import StudentGrid from "../components/StudentGrid";
-import Footer5 from "../components/Footer5";
-// import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Navbar1 from "../components/Navbar1";
+import Footer from "../components/Footer";
 
 const Training = () => {
   return (
@@ -24,12 +21,6 @@ const Training = () => {
             resources for successful career placements
           </div>
         </div>
-        <img
-          className="h-[313px] w-[533px] absolute !m-[0] right-[176px] bottom-[-205px] rounded-lg object-cover"
-          loading="lazy"
-          alt=""
-          src="/rectangle-8@2x.png"
-        />
       </section>
       <FrameComponent15 />
       <section className="self-stretch flex flex-row items-start justify-center pt-0 pb-[183px] pl-5 pr-[49px] box-border max-w-full lg:pr-6 lg:pb-[119px] lg:box-border mq1050:pb-[77px] mq1050:box-border mq450:pb-[50px] mq450:box-border">

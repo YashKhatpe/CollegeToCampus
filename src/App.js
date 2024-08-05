@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { KindeProvider } from "@kinde-oss/kinde-auth-react";
 import {
   Routes,
   Route,
@@ -23,6 +24,8 @@ import VirtualMeet from "./pages/VirtualMeet";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Navbar1 from "./components/Navbar1";
+import StreamLit from "./pages/StreamLit";
+import UserForm from "./pages/UserForm";
 
 function App() {
   const action = useNavigationType();
@@ -116,7 +119,7 @@ function App() {
 
     if (metaDescription) {
       const metaDescriptionTag = document.querySelector(
-        'head > meta[name="description"]',
+        'head > meta[name="description"]'
       );
       if (metaDescriptionTag) {
         metaDescriptionTag.content = metaDescription;
@@ -125,26 +128,35 @@ function App() {
   }, [pathname]);
 
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/joblisting" element={<JobListings />} />
-      <Route path="/homepage1" element={<HomePage1 />} />
-      <Route path="/resumescanner1" element={<ResumeScanner1 />} />
-      <Route path="/resources" element={<Resources />} />
-      <Route path="/interaction" element={<Interaction />} />
-      <Route path="/training" element={<Training />} />
-      <Route path="/interaction1" element={<Interaction1 />} />
-      <Route path="/training1" element={<Training1 />} />
-      <Route path="/homepage2" element={<HomePage11 />} />
-      <Route path="/joblistings" element={<JobListings1 />} />
-      <Route path="/resources1" element={<Resources1 />} />
-      <Route path="/aichat" element={<AIChat />} />
-      <Route path="/virtualmeet" element={<VirtualMeet />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/signin" element={<Signin />} />
-      <Route path="/resumescanner" element={<ResumeScanner />} />
-      <Route path="/nav" element={<Navbar1 />} />
-    </Routes>
+    <KindeProvider
+		clientId="92cd7201b27149d9be892620656f38de"
+		domain="https://collegetocampus.kinde.com"
+		redirectUri="http://localhost:3000"
+		logoutUri="http://localhost:3000"
+	>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/joblisting" element={<JobListings />} />
+        <Route path="/homepage1" element={<HomePage1 />} />
+        <Route path="/resumescanner1" element={<ResumeScanner1 />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/interaction" element={<Interaction />} />
+        <Route path="/training" element={<Training />} />
+        <Route path="/interaction1" element={<Interaction1 />} />
+        <Route path="/training1" element={<Training1 />} />
+        <Route path="/homepage2" element={<HomePage11 />} />
+        <Route path="/joblistings" element={<JobListings1 />} />
+        <Route path="/resources1" element={<Resources1 />} />
+        <Route path="/aichat" element={<AIChat />} />
+        <Route path="/virtualmeet" element={<VirtualMeet />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/resumescanner" element={<ResumeScanner />} />
+        <Route path="/nav" element={<Navbar1 />} />
+        <Route path="/streamlit" element={<StreamLit />} />
+        <Route path="/userdetails" element={<UserForm />} />
+      </Routes>
+    </KindeProvider>
   );
 }
 export default App;

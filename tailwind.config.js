@@ -11,7 +11,7 @@ module.exports = {
         3: '3px',
       },
       blur: {
-        'custom': '6px', 
+        'custom': '3px', 
       },
       colors: {
         gray: {
@@ -27,8 +27,11 @@ module.exports = {
         "text-default-default": "#1e1e1e",
         silver: "#b8c0cc",
         primary: "#0d1b2a",
+        secondary: "#d9d9d9",
+        btnColor: "#778da9",
         steelblue: "#5f7ca0",
         black: "#000",
+        btnBorder:"#0e7490",
         darkslategray: {
           100: "#404f5e",
           200: "#494949",
@@ -137,6 +140,12 @@ module.exports = {
       // },
       md: {
         max: "768px",
+      },
+      mq550: {
+        max: "550px",
+      },
+      mq750: {
+        max: "750px",
       },
       mq1150: {
         raw: "screen and (max-width: 1150px)",

@@ -1,11 +1,20 @@
-import { Avatar, Dropdown, DropdownHeader, Navbar, NavbarToggle } from "flowbite-react";
-import { useState } from "react";
+import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useKindeAuth } from '@kinde-oss/kinde-auth-react'
 const Navbar1 = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const {register, login, isAuthenticated, logout, isLoading, user} = useKindeAuth();
+  useEffect(() => {
+    if (isAuthenticated) {
+      console.log(isAuthenticated);
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [isAuthenticated]);
   return (
-    <Navbar className="bg-primary font-poppins h-20 px-7" fluid >
+    <Navbar className="bg-primary text-[17px] font-poppins h-20 px-7 max-w-full" fluid >
       <Navbar.Brand className="mt-3 mq450:flex mq450:justify-center mq450:max-w-full mq350:hidden" href="/">
         <img src="/logo-3@2x.png" className="mr-3 h-10 sm:h-9" alt="Flowbite React Logo" />
       </Navbar.Brand>
@@ -19,30 +28,30 @@ const Navbar1 = () => {
       <div>
 
       
-        {isLoggedIn ? (
+        {isAuthenticated ? (
           <div className="mq910:hidden">
 
         <Dropdown
           arrowIcon={false}
           inline
           label={
-            <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
+            <Avatar alt="User settings" img={user.picture} rounded />
             
           }
           
         >
           <Dropdown.Header>
-            <span className="block text-sm">Bonnie Green</span>
-            <span className="block truncate text-sm font-medium">name@flowbite.com</span>
+            <span className="block text-sm">{user.given_name}</span>
+            <span className="block truncate text-sm font-medium">{user.email}</span>
           </Dropdown.Header>
           <Dropdown.Item>Dashboard</Dropdown.Item>
           <Dropdown.Item>Settings</Dropdown.Item>
           <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
+          <Dropdown.Item onClick={logout} >Sign out</Dropdown.Item>
         </Dropdown>
             </div>
         ): (
-          <Link className="nav-class mq910:hidden" to="/signin">Login</Link>
+          <button onClick={login} className="nav-class mq910:hidden">Login</button>
         )}
         </div>
       {/* <div className="hidden mq910:flex ">

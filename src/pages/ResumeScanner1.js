@@ -1,21 +1,30 @@
 import FrameComponent10 from "../components/FrameComponent10";
 import FrameComponent9 from "../components/FrameComponent9";
 import Footer4 from "../components/Footer4";
+import Navbar1 from "../components/Navbar1";
 
 const ResumeScanner1 = () => {
   return (
-    <div className="w-full relative bg-gainsboro overflow-hidden flex flex-col items-start justify-start gap-[182px] leading-[normal] tracking-[normal] gap-[91px] gap-[45px]">
+    <>
+    <Navbar1/>
+    <div className="w-full h-full max-h-fit relative bg-gainsboro overflow-hidden flex flex-col items-start justify-start gap-[182px] leading-[normal] tracking-[normal] ">
       <FrameComponent10 />
-      <img
-        className="w-[1014px] h-[92px] absolute !m-[0] top-[1035px] right-[209px] rounded-lg"
-        alt=""
-        src="/rectangle-57.svg"
-      />
-      <section className="w-[1427px] flex flex-row items-start justify-center pt-0 px-5 pb-6 box-border max-w-full">
+      <div className="w-full max-h-full">
+
+      {/* <iframe
+        src="http://localhost:8501"  // URL of your Streamlit app
+        width="100%"
+        height="800px"
+        style={{ border: 'none' }}
+        title="Streamlit App"
+        /> */}
+        </div>
+      <section className="w-[100%] flex flex-row items-start justify-center pt-0 px-48  pb-6 box-border max-w-full">
         <FrameComponent9 />
       </section>
       <Footer4 />
     </div>
+    </>
   );
 };
 
