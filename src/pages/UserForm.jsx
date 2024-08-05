@@ -1,189 +1,250 @@
-import { Button, Checkbox, Label, TextInput } from "flowbite-react";
-import {useKindeAuth} from '@kinde-oss/kinde-auth-react'
+import { useKindeAuth } from '@kinde-oss/kinde-auth-react';
+import { useState } from "react";
+import axios from 'axios';
+
 const UserForm = () => {
-  const  { user, isAuthenticated } = useKindeAuth();
-  if(!isAuthenticated){
-    return(
+  const { user, isAuthenticated } = useKindeAuth();
+  const [userType, setUserType] = useState('student');
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    profilePicture: null,
+    email: '',
+    contactNumber: '',
+    gender: '',
+    clgName: '',
+    cmpName: '',
+    city: '',
+    degree: '',
+    cmpUrl: '',
+    desg: '',
+    user_type: 'student'
+  });
 
-      <>
-    Loading..
-    </>
-    )
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      firstName: user.given_name,
+      lastName: user.family_name,
+      email: userType === 'student' ? user.email : prevData.email,
+      user_type: userType,
+      [name]: files ? files[0] : value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+    try {
+      const response = await axios.post('http://localhost:8000/add_user', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  if (!isAuthenticated) {
+    return <div>Loading...</div>;
   }
+
   return (
-    // <div className="flex justify-center items-center h-screen max-h-full w-screen ">
-    // <form className="flex max-w-md flex-col gap-4 w-screen p-[60px] border-solid border-3 border-silver shadow-xl rounded-lg">
-    //   <div className="flex flex-row">
-
-      
-    //   <div>
-    //     <div className="mb-2 block">
-    //       <Label htmlFor="fname" value="First Name" />
-    //     </div>
-    //     <TextInput id="fname" type="text" value={user.given_name} disabled required />
-    //   </div>
-    //   <div className="pl-4">
-    //     <div className="mb-2 block">
-    //       <Label htmlFor="lname" value="Last Name" />
-    //     </div>
-    //     <TextInput className="" id="lname" type="text" value={user.family_name} disabled required />
-    //   </div>
-    //   </div>
-    //   <div>
-    //     <div className="mb-2 block">
-    //       <Label htmlFor="email" value="Email" />
-    //     </div>
-    //     <TextInput id="email" type="email" value={user.email} disabled required />
-    //   </div>
-    //   <div>
-    //     <div className="mb-2 block">
-    //       <Label htmlFor="pno" value="Your phone Number" />
-    //     </div>
-    //     <div className="mt-1">
-    //             <input type="tel" id="phone" name="phone"
-    //                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-    //                    maxLength="12"
-    //                    placeholder="123-456-7890"
-    //                    required
-    //                    className="block w-full border disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 bg-gray-50 text-gray-900 focus:border-cyan-500 focus:ring-cyan-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-cyan-500 dark:focus:ring-cyan-500 p-2.5 text-sm rounded-lg"/>
-    //         </div>
-    //   </div>
-    //   <div>
-    //     <div className="mb-2 block">
-    //       <Label htmlFor="password1" value="Your password" />
-    //     </div>
-    //     <TextInput id="password1" type="password" required />
-    //   </div>
-    //   <div>
-    //     <div className="mb-2 block">
-    //       <Label htmlFor="password1" value="Your password" />
-    //     </div>
-    //     <TextInput id="password1" type="password" required />
-    //   </div>
-    //   <div>
-    //     <div className="mb-2 block">
-    //       <Label htmlFor="password1" value="Your password" />
-    //     </div>
-    //     <TextInput id="password1" type="password" required />
-    //   </div>
-    //   <div className="flex items-center gap-2">
-    //     <Checkbox id="remember" />
-    //     <Label htmlFor="remember">Remember me</Label>
-    //   </div>
-    //   <Button type="submit">Submit</Button>
-    // </form>
-    // </div>
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 pt-2 rounded-lg shadow-lg max-w-lg w-full">
-        <h2 className="text-2xl font-bold mb-6 text-center">Personal details</h2>
-        <form>
-          <div className="flex">
-
-          <div className="mb-4 pr-1">
-            <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">First name</label>
+    <div className="max-w-xl mx-auto p-8">
+      <h1 className="text-2xl font-bold mb-6 text-center">Personal details</h1>
+      <div className="flex mb-4">
+        <button
+          className={`w-1/2 p-4 ${userType === 'student' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          onClick={() => setUserType('student')}
+        >
+          Student
+        </button>
+        <button
+          className={`w-1/2 p-4 ${userType === 'employee' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          onClick={() => setUserType('employee')}
+        >
+          Employee
+        </button>
+      </div>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="flex space-x-4">
+          <div className="w-1/2">
+            <label className="block text-sm font-medium text-gray-700">First name</label>
             <input
               type="text"
-              id="first-name"
-              className="mt-1 block w-full px-3 py-2 bg-[#eee] cursor-not-allowed border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              placeholder={user.given_name}
+              name="firstName"
+              value={user.given_name}
+              onChange={handleChange}
               disabled
-              />
-          </div>
-          <div className="mb-4 pl-1">
-            <label htmlFor="last-name" className="block text-sm font-medium text-gray-700">Last name</label>
-            <input
-              type="text"
-              id="last-name"
-              className="mt-1 block w-full px-3 py-2 bg-[#eee] cursor-not-allowed border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              placeholder={user.family_name}
-              disabled
-              />
-          </div>
-          </div>
-          <div className="mb-4">
-            <label htmlFor="profile-picture" className="block text-sm font-medium text-gray-700">Profile picture (Recommended)</label>
-            <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-md">
-              <div className="space-y-1 text-center">
-                <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                  <path d="M28 8H20C15.6 8 12 11.6 12 16V32C12 36.4 15.6 40 20 40H28C32.4 40 36 36.4 36 32V16C36 11.6 32.4 8 28 8ZM28 4C33.5 4 38 8.5 38 14V34C38 39.5 33.5 44 28 44H20C14.5 44 10 39.5 10 34V14C10 8.5 14.5 4 20 4H28Z"/>
-                </svg>
-                <div className="flex text-sm text-gray-600">
-                  <label
-                    htmlFor="profile-picture"
-                    className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
-                  >
-                    <span>Upload a picture</span>
-                    <input id="profile-picture" name="profile-picture" type="file" className="sr-only" />
-                  </label>
-                  <p className="pl-1">or drag and drop</p>
-                </div>
-                <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
-              </div>
-            </div>
-          </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-            <input
-              type="email"
-              id="email"
-              className="mt-1 bg-[#eee] block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm  cursor-not-allowed focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              disabled
-              placeholder={user.email}
+              className="mt-1 p-2 bg-[#eee] block w-full border  cursor-not-allowed border-gray-300 rounded-md"
             />
-            {/* <p className="mt-1 text-sm text-indigo-600 cursor-pointer">Change email</p> */}
           </div>
-          <div className="mb-4">
-            <label htmlFor="phone-number" className="block text-sm font-medium text-gray-700">Contact number</label>
-            <div className="flex mt-1">
-              <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">+91</span>
+          <div className="w-1/2">
+            <label className="block text-sm font-medium text-gray-700">Last name</label>
+            <input
+              type="text"
+              name="lastName"
+              value={user.family_name}
+              onChange={handleChange}
+              disabled
+              className="mt-1 p-2 bg-[#eee] block w-full border  cursor-not-allowed border-gray-300 rounded-md"
+            />
+          </div>
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Profile picture</label>
+          <input
+            type="file"
+            name="profilePicture"
+            onChange={handleChange}
+            className="mt-1 block w-full text-sm bg-[#eee] cursor-not-allowed text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+          />
+        </div>
+        {userType === 'student' && (
+          <>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Email</label>
               <input
-                type="tel"
-                maxLength={10}
-                id="phone-number"
-                className="flex-1 min-w-0 block w-full px-3 py-2 rounded-none rounded-r-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                type="email"
+                name="email"
+                value={user.email}
+                disabled
+                onChange={handleChange}
+                className="mt-1 p-2 block w-full bg-[#eee] cursor-not-allowed border border-gray-300 rounded-md"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Gender</label>
+              <select
+                name="gender"
+                value={formData.gender}
+                onChange={handleChange}
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+                required
+              >
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">College Name</label>
+              <input
+                type="text"
+                name="clgName"
+                value={formData.clgName}
+                placeholder="Eg. DBIT"
+                onChange={handleChange}
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                 required
               />
             </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Degree</label>
+              <input
+                type="text"
+                name="degree"
+                value={formData.degree}
+                onChange={handleChange}
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+                placeholder="Eg. B.E BTech"
+                required
+              />
             </div>
-          <div className="mb-4">
-            <label htmlFor="city" className="block text-sm font-medium text-gray-700">City</label>
+          </>
+        )}
+        {userType === 'employee' && (
+          <>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Official Email ID</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                placeholder="name@company.com"
+                onChange={handleChange}
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Company Name</label>
+              <input
+                name="cmpName"
+                type="text"
+                value={formData.cmpName}
+                onChange={handleChange}
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+                placeholder="Eg. TCS"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Company Website URL</label>
+              <input
+                type="text"
+                name="cmpUrl"
+                value={formData.cmpUrl}
+                onChange={handleChange}
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+                placeholder="Eg. www.name@company.com"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Role in Company</label>
+              <input
+                type="text"
+                name="desg"
+                value={formData.desg}
+                onChange={handleChange}
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+                placeholder="Eg. HR Manager"
+                required
+              />
+            </div>
+          </>
+        )}
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Contact number</label>
+          <div className="flex">
             <input
               type="text"
-              id="city"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              required
-              placeholder="Eg. Mumbai"
+              name="countryCode"
+              value="+91"
+              className="mt-1 p-2 block w-[10%] border border-gray-300 rounded-md bg-gray-100 cursor-not-allowed"
+              disabled
             />
-            {/* <p className="mt-1 text-sm text-indigo-600 cursor-pointer">Change email</p> */}
-            </div>
-
-            <div className="flex">
-
-          <div className="mb-4 pr-1">
-            <label htmlFor="college-name" className="block text-sm font-medium text-gray-700">College name</label>
             <input
-              type="text"
-              id="college-name"
-              className="mt-1 block w-full px-3 py-2  border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              placeholder="Eg. DBIT"
-              />
+              type="tel"
+              name="contactNumber"
+              value={formData.contactNumber}
+              onChange={handleChange}
+              className="mt-1 p-2 ml-4 block w-[90%] border border-gray-300 rounded-md"
+            />
           </div>
-          <div className="mb-4 pl-1">
-            <label htmlFor="degree-name" className="block text-sm font-medium text-gray-700">Degree pursuing</label>
-            <input
-              type="text"
-              id="degree-name"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              placeholder="Eg. B.E or B.tech"
-              />
-          </div>
-          </div>
-          <div className="flex items-center justify-center border border-3 cursor-pointer border-primary hover:bg-primary text-primary hover:text-white py-2 rounded-md transition duration-500 ease-in-out"><p>Update</p></div>
-        </form>
-      </div>
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">City</label>
+          <input
+            type="text"
+            name="city"
+            value={formData.city}
+            onChange={handleChange}
+            className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+            placeholder="Eg. Mumbai"
+            required
+          />
+        </div>
+        <button type="submit" className="w-full flex items-center justify-center border border-3 cursor-pointer border-primary hover:bg-primary text-primary hover:text-white py-2 rounded-md transition duration-500 ease-in-out">
+          Update
+        </button>
+      </form>
     </div>
   );
-}
+};
 
-export default UserForm;
+export default UserForm
