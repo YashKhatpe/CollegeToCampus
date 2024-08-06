@@ -9,7 +9,7 @@ class Tag(models.Model):
         return self.name
     
 class Company(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, primary_key=True)
     description = models.TextField()
     location = models.CharField(max_length=255)
     website = models.URLField(blank=True, null=True)
@@ -19,10 +19,9 @@ class Company(models.Model):
         return self.name
     
 class Job(models.Model):
-    logo = models.ImageField()
     title = models.CharField(max_length=255)
     description = models.TextField()
-    # company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='jobs')
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='jobs')
     
     salary_from = models.IntegerField()
     salary_to = models.IntegerField()
