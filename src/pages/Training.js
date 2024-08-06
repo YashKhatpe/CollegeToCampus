@@ -12,11 +12,11 @@ const Training = () => {
       <section className="w-[1382px] flex flex-row items-start justify-center pt-0 px-5 pb-[193px] box-border relative max-w-full text-left text-31xl text-gray-300 font-lato mq450:pb-[125px] mq450:box-border">
         <div className="w-[648px] flex flex-col items-start justify-start gap-[54px] max-w-full gap-[27px]">
           <div className="self-stretch flex flex-row items-start justify-start py-0 pl-4 pr-[7px] box-border max-w-full">
-            <h1 className="m-0 mt-4 flex-1 relative text-inherit tracking-[-0.25px] leading-[64px] font-extrabold font-inherit inline-block [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)] max-w-full mq1050:text-21xl mq1050:leading-[51px] mq450:text-11xl mq450:leading-[38px]">
+            <h1 className="top-[20px] right-[220px] text-center m-0 mt-4 flex-1 relative text-inherit tracking-[-0.25px] leading-[64px] font-extrabold font-inherit inline-block [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)] max-w-full mq1050:text-21xl mq1050:leading-[51px] mq450:text-11xl mq450:leading-[38px]">
               Empowering Careers Now
             </h1>
           </div>
-          <div className="self-stretch relative text-xl text-center mq450:text-base">
+          <div className="right-[220px] self-stretch relative text-xl text-center mq450:text-base">
             Connecting students with employers through innovative tools and
             resources for successful career placements
           </div>
