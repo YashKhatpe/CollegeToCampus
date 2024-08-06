@@ -13,6 +13,8 @@ const HomePage = () => {
     
     <Navbar1/>
     <div className="w-full min-h-screen relative bg-gray-300 flex flex-col items-center justify-start  px-4 sm:px-6 md:px-8 lg:px-[90px] box-border gap-[18px] leading-normal tracking-normal text-center text-31xl text-background-default-default font-poppins overflow-x-hidden">
+    
+    <div className="w-full min-h-screen relative bg-gray-300 flex flex-col items-center justify-start  px-4 sm:px-6 md:px-8 lg:px-[90px] box-border gap-[18px] leading-normal tracking-normal text-center text-31xl text-white font-poppins overflow-x-hidden">
       <img
         className="w-full h-[720px] filter blur-custom absolute top-0 left-0 right-0 object-cover"
         alt=""
@@ -20,7 +22,7 @@ const HomePage = () => {
       />  
 
       <div className="mt-[135px] relative overflow-hidden w-full max-w-[1000px] text-left px-4 sm:px-6">
-        <h1 className="w-full text-21xl tracking-[-0.25px] leading-[64px] font-extrabold text-shadow max-w-full">
+        <h1 className="bw-full text-21xl tracking-[-0.25px] leading-[64px] font-extrabold text-shadow max-w-full">
           Empower Your Future
         </h1>
       </div>
@@ -35,22 +37,23 @@ const HomePage = () => {
         <Button1  labelText="Join" />
       </div>
 
-      <section className="w-full max-w-full flex flex-col items-center justify-center text-silver px-4 sm:px-6 md:px-[180px] mt-[370px] text-21xl">
-        <div className="w-full max-w-[1029px] flex flex-wrap items-center justify-center gap-10">
-          <h1 className="flex-1 text-inherit tracking-[-0.25px] leading-[64px] font-bold text-shadow max-w-full text-center">
-            <p>Connecting Students</p>
-            <p>with Opportunities</p>
-          </h1>
-          <div className="flex-1 w-full max-w-[460px] text-center px-4 sm:px-6">
-            <b className="filter drop-shadow">
-              <p className="whitespace-pre-wrap">150+ Join Us</p>
-              <p className="whitespace-pre-wrap">15 Success Stories</p>
-            </b>
-          </div>
-        </div>
-      </section>
+      <section className="w-full  mb-8 relative flex flex-col items-center justify-center text-silver px-4 sm:px-6 md:px-8 lg:px-12 mt-[350px] md:mt-[250px] lg:mt-[300px] text-4xl md:text-5xl lg:text-6xl">
+  <div className="w-full max-w-[1029px] flex flex-wrap items-center justify-center gap-10">
+    <h1 className="flex-1 text-21xl  tracking-tight leading-snug font-extrabold text-shadow max-w-full text-center">
+      <p>Connecting Students</p>
+      <p>with Opportunities</p>
+    </h1>
+    <div className="flex-1 w-full max-w-[460px]  text-21xl text-center px-4 sm:px-6">
+      <b className="filter drop-shadow">
+        <p className="whitespace-pre-wrap">150+ Join Us</p>
+        <p className="whitespace-pre-wrap">15 Success Stories</p>
+      </b>
+    </div>
+  </div>
+</section>
 
-      <div className="w-full text-xl text-silver text-center mb-[50px] px-4 sm:px-6">
+
+      <div className="w-full text-xl text-silver text-center mb-[30px] px-4 sm:px-6">
         <div className="max-w-[1068px] font-semibold mx-auto">
           We bridge students seeking employment with recruiters, offering comprehensive resources, training programs, and interactive features to enhance placements and career success.
         </div>
@@ -76,16 +79,16 @@ const HomePage = () => {
         <div className="w-full max-w-[978px] flex flex-wrap items-center justify-center gap-5">
           <Link to='/resumescanner' className="flex-1 cursor-pointer min-w-[445px] max-w-full flex flex-col items-center justify-start gap-[21px]">
             <img className="w-full h-[253px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage9-2@2x.png" />
-            <div className="w-full flex flex-col items-center justify-start text-center px-4 text-8xl">
-              <b>AI-Powered Resume Scanner</b>
-              <p className="text-center text-xl">Optimize Your Resume with Intelligent Insights for a Competitive Edge</p>
+            <div className="w-full flex flex-col items-center justify-start text-center px-4 text-5xl">
+              <b className="mb-8">AI-Powered Resume Scanner</b>
+              <p className="text-center text-lg">Optimize Your Resume with Intelligent Insights for a Competitive Edge</p>
             </div>
           </Link>
           <div className="flex-1 min-w-[444px] cursor-pointer max-w-full flex flex-col items-center justify-start gap-[22px]">
             <img className="w-full h-[253px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage7-2@2x.png" />
-            <div className="w-full flex flex-col text-8xl items-center justify-start text-center px-4 sm:px-6">
-              <b>Interactive Features</b>
-              <p className="text-center text-xl">Realtime sessions for practice and feedback for users.</p>
+            <div className="w-full flex flex-col text-5xl items-center justify-start text-center px-4 sm:px-6">
+              <b className="mb-8">Interactive Features</b>
+              <p className="text-center text-lg">Realtime sessions for practice and feedback for users.</p>
             </div>
           </div>
         </div>
@@ -95,16 +98,16 @@ const HomePage = () => {
         <div className="w-full max-w-[980px] flex flex-wrap items-center justify-center gap-5">
           <div className="flex-1 cursor-pointer min-w-[447px] max-w-full flex flex-col items-center justify-start gap-[39px]">
             <img className="w-full h-[254px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage8-2@2x.png" />
-            <div className="w-full flex flex-col text-8xl items-center justify-start text-center px-4 sm:px-6">
-              <b>Placement Resources</b>
-              <p className="text-center text-xl">Guides and tools for resumes, interviews, and job postings.</p>
+            <div className="w-full flex flex-col text-5xl items-center justify-start text-center px-4 sm:px-6">
+              <b className="mb-8">Placement Resources</b>
+              <p className="text-center text-lg ">Guides and tools for resumes, interviews, and job postings.</p>
             </div>
           </div>
           <div className="flex-1 cursor-pointer min-w-[446px] max-w-full flex flex-col items-center justify-start gap-[38px]">
             <img className="w-full h-[254px] rounded-lg object-cover" loading="lazy" alt="" src="/homepage6-2@2x.png" />
-            <div className="w-full flex flex-col items-center justify-start text-8xl text-center px-4 sm:px-6">
-              <b>Training Programs</b>
-              <p className="text-center text-xl">Interactive courses with detailed content and schedules available.</p>
+            <div className="w-full flex flex-col items-center justify-start text-5xl text-center px-4 sm:px-6">
+              <b className="mb-8">Training Programs</b>
+              <p className="text-center text-lg">Interactive courses with detailed content and schedules available.</p>
             </div>
           </div>
         </div>
@@ -199,10 +202,11 @@ const HomePage = () => {
       </div>
       </section>
     </div>
+    </div>
     <Footer/>
 
     </>
   );
 };
 
-export default HomePage;
+export default HomePage;

@@ -26,6 +26,8 @@ import Signup from "./pages/Signup";
 import Navbar1 from "./components/Navbar1";
 import StreamLit from "./pages/StreamLit";
 import UserForm from "./pages/UserForm";
+import UserRedirect from "./pages/UserRedirect";
+import PostJobInternship from "./pages/PostJobInternship";
 
 function App() {
   const action = useNavigationType();
@@ -131,8 +133,8 @@ function App() {
     <KindeProvider
 		clientId="92cd7201b27149d9be892620656f38de"
 		domain="https://collegetocampus.kinde.com"
-		redirectUri="http://localhost:3000"
-		logoutUri="http://localhost:3000"
+		redirectUri="http://localhost:3000/redirect"
+		logoutUri="http://localhost:3000/"
 	>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -155,6 +157,8 @@ function App() {
         <Route path="/nav" element={<Navbar1 />} />
         <Route path="/streamlit" element={<StreamLit />} />
         <Route path="/userdetails" element={<UserForm />} />
+        <Route path="/redirect" element={<UserRedirect />} />
+        <Route path="/post" element={<PostJobInternship />} />
       </Routes>
     </KindeProvider>
   );

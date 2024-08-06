@@ -17,6 +17,7 @@ class user(models.Model):
         ('student', 'student'),
         ('employee', 'employee')
     ]
+    userId = models.CharField(max_length=100, primary_key=True)
     firstName = models.CharField(max_length=100)
     lastName = models.CharField(max_length=100)
     profilePicture = models.ImageField(blank=True, null=True)
@@ -34,5 +35,9 @@ class user(models.Model):
     desg =  models.CharField(max_length=255,blank=True, null=True)
     
     user_type = models.CharField(choices=USER_TYPE,max_length=20)
+
+    def __str__(self):
+        return self.firstName
+    
 
 

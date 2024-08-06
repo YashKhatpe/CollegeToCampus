@@ -1,8 +1,30 @@
-import Checkboxes from "../components/Checkboxes";
 
+import { useEffect, useState } from "react";
+import Checkboxes from "../components/Checkboxes";
+import Footer from "../components/Footer";
+import Navbar1 from "../components/Navbar1";
+import axios from "axios";
 const JobListings = () => {
+  const [jobs, setJobs] = useState([]);
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/job_listing");
+        if(response){
+          setJobs(response.data);
+          console.log(response.data);
+        } else {
+          setJobs(null);
+        }
+      } catch (error) {
+        
+      }
+    }
+    fetchJobs();
+  }, []);
   return (
     <>
+    <Navbar1/>
       <div className="font-poppins min-h-screen bg-gray-300 overflow-x-hidden flex flex-col items-center py-4 px-2">
         {/* Header Section */}
         <header className="max-w-6xl flex flex-row items-center text-center mb-8 px-4">
@@ -97,8 +119,65 @@ const JobListings = () => {
           </div>
 
           {/* Job Listings Section */}
-          <div className="lg:w-3/4 flex flex-col gap-6">
-            <div className="bg-secondary rounded-lg shadow-lg p-4 flex flex-col">
+          {jobs && (
+        <div className="lg:w-3/4 flex flex-col gap-6">
+          {jobs.map((job) => (
+            <div key={job.id} className="bg-secondary rounded-lg shadow-lg p-4 flex flex-col">
+              <h2 className="text-xl font-extrabold">{job.category}</h2>
+              <p className="text-sm font-bold">{job.title}</p>
+              <div className="flex flex-col gap-2 text-sm">
+                <div className="flex items-center gap-2">
+                  <img
+                    className="w-4 h-4"
+                    src="/location-on.svg"
+                    alt="Location"
+                  />
+                  <span>{job.location}</span>
+                  <span className="ml-5 flex items-center">
+                    <img
+                      className="w-8 h-4 inline"
+                      src="/briefcase1.svg"
+                      alt="Duration"
+                    />
+                    <span className="ml-1">{job.type}</span>
+                  </span>
+                  <span className="ml-4 flex items-center">
+                    <img
+                      className="w-4 h-4 inline"
+                      src="/rupee.svg"
+                      alt="Salary"
+                    />
+                    <span className="ml-1">{job.salary_from}-{job.salary_to}</span>
+                  </span>
+                </div>
+                <p>Posted on {job.application_deadline}</p>
+              </div>
+              <div className="flex justify-between items-center">
+                {job.logo ? (
+
+                <img
+                  className="w-16 h-16"
+                  src={job.logo}
+                  alt="Organization Logo"
+                />
+              ): (
+                <img
+                  className="w-16 h-16"
+                  src="/organization-building-icon-1@2x"
+                  alt="Organization Logo"
+                />
+                
+              )}
+                <button className="bg-primary text-white px-4 py-2 rounded-md border border-gray-300 hover:bg-steelblue">
+                  Apply
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+            {/* <div className="bg-secondary rounded-lg shadow-lg p-4 flex flex-col">
               <h2 className="text-xl font-extrabold">Market Research</h2>
               <p className="text-sm font-bold">CavinKare Private Limited</p>
               <div className="flex flex-col gap-2 text-sm">
@@ -182,51 +261,8 @@ const JobListings = () => {
                   Apply
                 </button>
               </div>
-            </div>
-
-            <div className="bg-secondary rounded-lg shadow-lg p-4 flex flex-col">
-              <h2 className="text-xl font-extrabold">Market Research</h2>
-              <p className="text-sm font-bold">CavinKare Private Limited</p>
-              <div className="flex flex-col gap-2 text-sm">
-                <div className="flex items-center gap-2">
-                  <img
-                    className="w-4 h-4"
-                    src="/location-on.svg"
-                    alt="Location"
-                  />
-                  <span>Madhya Pradesh, Gujarat, Rajasthan</span>
-                  <span className="ml-5 flex items-center">
-                    <img
-                      className="w-8 h-4 inline"
-                      src="/briefcase1.svg"
-                      alt="Duration"
-                    />
-                    <span className="ml-1">3 Weeks</span>
-                  </span>
-                  <span className="ml-4 flex items-center">
-                    <img
-                      className="w-4 h-4 inline"
-                      src="/rupee.svg"
-                      alt="Salary"
-                    />
-                    <span className="ml-1">3,500-5,000 / week</span>
-                  </span>
-                </div>
-                <p>2 weeks ago</p>
-              </div>
-
-              <div className="flex justify-between items-center">
-                <img
-                  className="w-16 h-16"
-                  src="/organization-building-icon-11@2x.png"
-                  alt="Company"
-                />
-                <button className="bg-primary text-white px-4 py-2 rounded-md border border-gray-300 hover:bg-steelblue">
-                  Apply
-                </button>
-              </div>
-            </div>
-          </div>
+            </div> */}
+          
         </section>
 
         {/* Promotion Banner Section */}
@@ -242,6 +278,7 @@ const JobListings = () => {
           </button>
         </section>
       </div>
+      <Footer/>
     </>
   );
 };
