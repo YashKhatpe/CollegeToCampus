@@ -9,6 +9,7 @@ class Tag(models.Model):
         return self.name
     
 class Company(models.Model):
+    logo = models.ImageField(upload_to='logo')
     name = models.CharField(max_length=255, primary_key=True)
     description = models.TextField()
     location = models.CharField(max_length=255)
@@ -30,7 +31,7 @@ class Job(models.Model):
     location = models.CharField(max_length=255) #multiple
     #location = models.JSONField(default=list)
     type = models.CharField(max_length=50, choices=[('Full Time', 'Full Time'), ('Part Time', 'Part Time'), ('Contract', 'Contract')])
-    posted_by = models.CharField(max_length=255)
+    posted_by = models.ForeignKey('user.employeeUser',on_delete=models.CASCADE,max_length=255)
     posted_date = models.DateTimeField(auto_now_add=True)
     application_deadline = models.DateField(null=True, blank=True)
     tags = models.ManyToManyField(Tag, related_name='jobs', blank=True)

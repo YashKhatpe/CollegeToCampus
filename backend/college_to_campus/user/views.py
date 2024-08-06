@@ -34,6 +34,8 @@ def add_user(request):
 def check_user_id(request):
     user_id = request.GET.get('user_id', None)
     if user_id is not None:
-        exists = user.objects.filter(userId=user_id).exists()
-        return JsonResponse({'exists': exists})
+        exists1 = studentUser.objects.filter(userId=user_id).exists()
+        exists2 = employeeUser.objects.filter(userId=user_id).exists()
+        
+        return JsonResponse({'exists': exists1 or exists2})
     return JsonResponse({'error': 'No user_id provided'}, status=400)
