@@ -48,19 +48,9 @@ const FrameComponent17 = ({ className = "" }) => {
             <div className="w-[324px] flex flex-col items-end justify-start gap-5 max-w-full">
               <div className="flex flex-col items-start justify-end pt-0 px-0 pb-[5px]">
                 <button className="cursor-pointer border-border-brand-default border-[1px] border-solid py-[9px] px-[33px] bg-gray-300 rounded-radius-full overflow-hidden flex flex-row items-start justify-start gap-space-200">
-                  <img
-                    className="h-4 w-4 relative overflow-hidden shrink-0 hidden"
-                    alt=""
-                    src="/star3.svg"
-                  />
                   <div className="relative text-5xl leading-[34px] font-extrabold font-single-line-body-base text-text-brand-on-brand text-left inline-block min-w-[90px] mq450:text-lgi mq450:leading-[27px]">
                     Explore
                   </div>
-                  <img
-                    className="h-4 w-4 relative overflow-hidden shrink-0 hidden"
-                    alt=""
-                    src="/x5.svg"
-                  />
                 </button>
               </div>
             </div>
