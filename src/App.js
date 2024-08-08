@@ -28,6 +28,7 @@ import StreamLit from "./pages/StreamLit";
 import UserForm from "./pages/UserForm";
 import UserRedirect from "./pages/UserRedirect";
 import PostJobInternship from "./pages/PostJobInternship";
+import TrainingPrograms from "./pages/TrainingProgram";
 
 function App() {
   const action = useNavigationType();
@@ -158,7 +159,9 @@ function App() {
         <Route path="/streamlit" element={<StreamLit />} />
         <Route path="/userdetails" element={<UserForm />} />
         <Route path="/redirect" element={<UserRedirect />} />
-        <Route path="/post" element={<PostJobInternship />} />
+        <Route path="/post" element={<PostJobInternship />} />        
+        <Route path="/trainingprograms" element={<TrainingPrograms />} />        
+
       </Routes>
     </KindeProvider>
   );

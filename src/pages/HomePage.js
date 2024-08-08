@@ -16,7 +16,7 @@ const HomePage = () => {
     
     <div className="w-full min-h-screen relative bg-gray-300 flex flex-col items-center justify-start  px-4 sm:px-6 md:px-8 lg:px-[90px] box-border gap-[18px] leading-normal tracking-normal text-center text-31xl text-white font-poppins overflow-x-hidden">
       <img
-        className="w-full h-[720px] filter blur-custom absolute top-0 left-0 right-0 object-cover"
+        className="w-full h-[800px] filter blur-custom absolute top-0 left-0 right-0 object-cover"
         alt=""
         src="/convo1.jpeg"
       />  
@@ -27,7 +27,7 @@ const HomePage = () => {
         </h1>
       </div>
 
-      <div className="relative w-full max-w-[1000px] text-3xl text-left px-4 sm:px-6">
+      <div className=" relative w-full max-w-[1000px] text-3xl text-left px-4 sm:px-6">
         <b>
           Connecting students with Opportunities through Dynamic Training and Placement Solutions
         </b>
@@ -38,7 +38,7 @@ const HomePage = () => {
       </div>
 
       <section className="w-full  mb-8 relative flex flex-col items-center justify-center text-silver px-4 sm:px-6 md:px-8 lg:px-12 mt-[350px] md:mt-[250px] lg:mt-[300px] text-4xl md:text-5xl lg:text-6xl">
-  <div className="w-full max-w-[1029px] flex flex-wrap items-center justify-center gap-10">
+  <div className="mt-14 w-full max-w-[1029px] flex flex-wrap items-center justify-center gap-10">
     <h1 className="flex-1 text-21xl  tracking-tight leading-snug font-extrabold text-shadow max-w-full text-center">
       <p>Connecting Students</p>
       <p>with Opportunities</p>
